@@ -1,9 +1,10 @@
-const { MESSAGES } = require('../../utility/constants');
-const fetch = require('node-fetch');
+const Discord = require('discord.js')
+const bot = new Discord.Client()
 const { MessageEmbed } = require('discord.js');
+const fetch = require('node-fetch');
 
 module.exports.run = (bot, message, args) => {
-    console.log(countries);
+    var countries = args[0];
 
     if(!args[0]) {
         fetch('https://covid19.mathdro.id/api')
@@ -56,5 +57,4 @@ module.exports.run = (bot, message, args) => {
         });        
     };
 };
-
-module.exports.help = MESSAGES.COMMANDS.COMMANDES.COVID;
+bot.login('TOKEN')
