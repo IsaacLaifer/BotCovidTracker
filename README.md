@@ -23,3 +23,7 @@ You can use 2 different commands :
 - !covid 
 - !covid ( + name of a country ) 
 
+*The name of the country have to be in English.*
+
+ ## Bonus
+
