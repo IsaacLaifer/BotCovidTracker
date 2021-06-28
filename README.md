@@ -5,6 +5,21 @@
 
 ## Overview 
 
-BotAgenda is a complete customizable bot that can add  work to do in the data base and show them with a command.
+BotCovidTracker is discord bot that can track covid information in your country or the world stats ! 
 
 Installation is easy , and you do not need to know anything about coding. 
+
+## Installation
+
+The installation is very simple, you just have to install 2 libraries :
+
+- Discord.js ( npm i discord.js )
+- Node-fetch ( npm i node-fetch ) 
+
+## Use 
+
+You can use 2 different commands : 
+
+- !covid 
+- !covid ( + name of a country ) 
+
