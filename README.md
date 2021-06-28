@@ -26,4 +26,11 @@ You can use 2 different commands :
 *The name of the country have to be in English.*
 
  ## Bonus
-
+ 
+ You can extract more information with the confirmed detail and recovered detail of a country. 
+ You can use them by putting the information in a variable :
+ ```
+ const detail = data.confirmed.detail
+ // or 
+ const detail = data.recovered.detail
+ ```
