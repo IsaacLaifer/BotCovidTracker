@@ -37,7 +37,6 @@ module.exports.run = (bot, message, args) => {
         .then(data => {
           
             const detail = data.confirmed.detail.toLocaleString()
-            console.log(detail)
             const confirmed = data.confirmed.value.toLocaleString()
             const recovered = data.recovered.value.toLocaleString()
             const deaths = data.deaths.value.toLocaleString()
