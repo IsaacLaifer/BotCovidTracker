@@ -1,7 +1,6 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client()
-const { MessageEmbed } = require('discord.js');
+const { MESSAGES } = require('../../utility/constants');
 const fetch = require('node-fetch');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (bot, message, args) => {
     var countries = args[0];
@@ -36,6 +35,9 @@ module.exports.run = (bot, message, args) => {
         fetch(`https://covid19.mathdro.id/api/countries/${args[0]}`)
         .then(response => response.json())
         .then(data => {
+          
+            const detail = data.confirmed.detail.toLocaleString()
+            console.log(detail)
             const confirmed = data.confirmed.value.toLocaleString()
             const recovered = data.recovered.value.toLocaleString()
             const deaths = data.deaths.value.toLocaleString()
@@ -48,6 +50,7 @@ module.exports.run = (bot, message, args) => {
                 { name: 'Cas soignés', value: `${recovered}`, inline: true},
                 { name: 'Décès totaux', value: `${deaths}`, inline: true},
                 { name: 'Dernière mise à jour', value: `${lastUpdate}`, inline: true},
+                { name: 'Détail', value: `${detail}`, inline: true}
             )
 
             message.channel.send(embed)
@@ -57,4 +60,3 @@ module.exports.run = (bot, message, args) => {
         });        
     };
 };
-bot.login('TOKEN')
